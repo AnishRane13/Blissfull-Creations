@@ -32,8 +32,8 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <>
-      <nav className={`w-full transition-all duration-500 z-50 ${
+    <div className="relative">
+      <nav className={`w-full transition-all duration-500 z-40 ${
         isSticky
           ? 'fixed top-0 bg-white/95 backdrop-blur-md shadow-lg'
           : 'relative bg-white'
@@ -49,13 +49,13 @@ const Navbar = () => {
                 >
                   <div className="relative w-6 h-5">
                     <span className={`absolute w-6 h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
-                      isMobileMenuOpen ? 'rotate-45 top-2' : 'rotate-0 top-0'
+                      isMobileMenuOpen ? 'rotate-45 top-2 z-50' : 'rotate-0 top-0'
                     }`} />
                     <span className={`absolute w-6 h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
                       isMobileMenuOpen ? 'opacity-0' : 'opacity-100 top-2'
                     }`} />
                     <span className={`absolute w-6 h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
-                      isMobileMenuOpen ? '-rotate-45 top-2' : 'rotate-0 top-4'
+                      isMobileMenuOpen ? '-rotate-45 top-2 z-50' : 'rotate-0 top-4'
                     }`} />
                   </div>
                 </button>
@@ -99,60 +99,45 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-
-        {/* Search Bar - All Screens */}
-        <div className={`absolute left-0 right-0 bg-white transition-all duration-300 shadow-md ${
-          isSearchOpen 
-            ? 'opacity-100 top-full' 
-            : 'opacity-0 -top-full pointer-events-none'
-        }`}>
-          <div className="max-w-4xl mx-auto px-4 py-4">
-            <div className="relative flex items-center">
-              <input
-                type="text"
-                placeholder="Search collections..."
-                className="w-full px-3 py-2 text-sm border-b border-gray-300 outline-none pr-10"
-              />
-              <button 
-                onClick={() => setIsSearchOpen(false)}
-                className="absolute right-0 text-gray-600 hover:text-gray-800 p-2"
-              >
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Menu - Fullscreen Overlay */}
-        <div className={`fixed inset-0 bg-white transition-opacity duration-500 lg:hidden ${
-          isMobileMenuOpen
-            ? 'opacity-100 pointer-events-auto'
-            : 'opacity-0 pointer-events-none'
-        }`}>
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
-            {navItems.map((item, index) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className={`text-2xl font-light text-gray-800 hover:text-gray-600 transition-all duration-300 transform ${
-                  isMobileMenuOpen
-                    ? 'translate-x-0 opacity-100'
-                    : 'translate-x-8 opacity-0'
-                }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-        </div>
       </nav>
+
+      {/* Mobile Menu - Fullscreen Overlay */}
+      <div className={`fixed inset-0 bg-white transition-opacity duration-500 lg:hidden z-50 ${
+        isMobileMenuOpen
+          ? 'opacity-100 pointer-events-auto'
+          : 'opacity-0 pointer-events-none'
+      }`}>
+        <div className="flex flex-col items-center justify-center h-full space-y-8 relative">
+          {/* Close Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="absolute top-6 right-6 text-gray-600 hover:text-gray-900 transition-colors duration-300"
+          >
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {navItems.map((item, index) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className={`text-2xl font-light text-gray-800 hover:text-gray-600 transition-all duration-300 transform ${
+                isMobileMenuOpen
+                  ? 'translate-x-0 opacity-100'
+                  : 'translate-x-8 opacity-0'
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+      </div>
 
       {/* Spacer for fixed navbar */}
       {isSticky && <div className="h-16" />}
-    </>
+    </div>
   );
 };
 

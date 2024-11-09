@@ -100,18 +100,22 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Search Bar - Mobile */}
-        {isSearchOpen && (
-          <div className="lg:hidden bg-white px-4 py-2 shadow-md">
-            <div className="flex items-center border-b border-gray-300">
+        {/* Search Bar - All Screens */}
+        <div className={`absolute left-0 right-0 bg-white transition-all duration-300 shadow-md ${
+          isSearchOpen 
+            ? 'opacity-100 top-full' 
+            : 'opacity-0 -top-full pointer-events-none'
+        }`}>
+          <div className="max-w-4xl mx-auto px-4 py-4">
+            <div className="relative flex items-center">
               <input
                 type="text"
                 placeholder="Search collections..."
-                className="w-full px-3 py-2 text-sm outline-none"
+                className="w-full px-3 py-2 text-sm border-b border-gray-300 outline-none pr-10"
               />
               <button 
                 onClick={() => setIsSearchOpen(false)}
-                className="text-gray-600 hover:text-gray-800"
+                className="absolute right-0 text-gray-600 hover:text-gray-800 p-2"
               >
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
@@ -119,7 +123,7 @@ const Navbar = () => {
               </button>
             </div>
           </div>
-        )}
+        </div>
 
         {/* Mobile Menu - Fullscreen Overlay */}
         <div className={`fixed inset-0 bg-white transition-opacity duration-500 lg:hidden ${

@@ -63,7 +63,7 @@ const Navbar = () => {
               <div className="lg:hidden">
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="relative w-10 h-10 rounded-full hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center"
+                  className="relative w-10 h-10 rounded-full transition-colors duration-300 flex items-center justify-center"
                   aria-label="Toggle menu"
                 >
                   <div className="relative w-5 h-5">
@@ -116,7 +116,7 @@ const Navbar = () => {
               <div className="flex items-center space-x-6">
                 <button
                   onClick={() => setIsSearchOpen(!isSearchOpen)}
-                  className="w-10 h-10 rounded-full  hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center"
+                  className="w-10 h-10 rounded-full transition-colors duration-300 flex items-center justify-center"
                 >
                   <svg
                     className="h-5 w-5 text-gray-700"
@@ -192,7 +192,7 @@ const Navbar = () => {
               <h2 className="text-2xl font-serif text-gray-800">Menu</h2>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-10 h-10 rounded-full hover:bg-gray-100 transition-all duration-300 flex items-center justify-center group"
+                className="w-10 h-10 rounded-full transition-all duration-300 flex items-center justify-center group"
                 aria-label="Close menu"
               >
                 <svg

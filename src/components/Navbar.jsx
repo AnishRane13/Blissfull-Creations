@@ -137,7 +137,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Search Overlay - Now inside nav */}
+        {/* Search Overlay */}
         {isSearchOpen && (
           <div className="absolute top-full left-0 right-0 bg-white shadow-md border-t border-gray-100 z-50">
             <div className="max-w-7xl mx-auto px-4 py-4">
@@ -172,21 +172,21 @@ const Navbar = () => {
         )}
       </nav>
 
-      {/* Mobile Menu - Modern Overlay */}
+      {/* Mobile Menu - Top Overlay */}
       <div
-        className={`fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity duration-500 lg:hidden z-40 ${
+        className={`fixed inset-0 bg-black/80 backdrop-blur-sm transition-all duration-500 lg:hidden z-40 ${
           isMobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         }`}
       >
         <div
-          className={`fixed inset-y-0 right-0 w-full max-w-sm bg-white transform transition-transform duration-500 ease-in-out ${
-            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          className={`fixed inset-x-0 top-0 bg-white transform transition-transform duration-500 ease-in-out ${
+            isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
           {/* Mobile Menu Content */}
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col max-h-[90vh]">
             {/* Header */}
             <div className="flex justify-between items-center p-6 border-b border-gray-100">
               <h2 className="text-2xl font-serif text-gray-800">Menu</h2>
@@ -303,7 +303,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
       {/* Spacer for fixed navbar */}
       {isSticky && <div className="h-16" />}
     </div>

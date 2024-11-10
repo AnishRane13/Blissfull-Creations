@@ -63,7 +63,7 @@ const Navbar = () => {
               <div className="lg:hidden">
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="relative w-10 h-10 rounded-full bg-gray-50 hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center"
+                  className="relative w-10 h-10 rounded-full hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center"
                   aria-label="Toggle menu"
                 >
                   <div className="relative w-5 h-5">

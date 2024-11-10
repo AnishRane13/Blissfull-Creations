@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <div className="min-h-screen font-serif">
+    <div className="min-h-screen font-serif tracking-wider">
       <Navbar />
       <main>
         <InfoBanner/>

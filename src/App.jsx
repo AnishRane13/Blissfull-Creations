@@ -1,4 +1,5 @@
 import './App.css'
+import Hero from './components/Hero';
 import InfoBanner from './components/InforBanner';
 import Navbar from './components/Navbar'
 
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <main>
         <InfoBanner/>
+        <Hero/>
       </main>
     </div>
   );

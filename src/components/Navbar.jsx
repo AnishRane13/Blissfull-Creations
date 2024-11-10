@@ -4,14 +4,13 @@ const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const navItems = [
-    { name: 'New Arrivals', href: '#' },
-    { name: 'Earrings', href: '#' },
-    { name: 'Necklaces', href: '#' },
-    { name: 'Rings', href: '#' },
-    { name: 'Bracelets', href: '#' },
-    { name: 'Collections', href: '#' }
+    { name: 'New Arrivals', href: '#', description: 'Discover our latest jewelry pieces' },
+    { name: 'Earrings', href: '#', description: 'Elegant earrings for every occasion' },
+    { name: 'Necklaces', href: '#', description: 'Timeless necklaces and pendants' },
+    { name: 'Collections', href: '#', description: 'Explore our curated collections' }
   ];
 
   useEffect(() => {
@@ -28,6 +27,7 @@ const Navbar = () => {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
+      setActiveIndex(null);
     }
   }, [isMobileMenuOpen]);
 
@@ -41,27 +41,28 @@ const Navbar = () => {
         <div className="w-full border-b border-gray-100">
           <div className="mx-auto px-4">
             <div className="flex items-center justify-between h-16">
-              {/* Mobile Menu Button */}
+              {/* Mobile Menu Toggle */}
               <div className="lg:hidden">
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="text-gray-800 hover:text-gray-600 transition-colors duration-300"
+                  className="relative w-10 h-10 rounded-full bg-gray-50 hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center"
+                  aria-label="Toggle menu"
                 >
-                  <div className="relative w-6 h-5">
-                    <span className={`absolute w-6 h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
-                      isMobileMenuOpen ? 'rotate-45 top-2 z-50' : 'rotate-0 top-0'
+                  <div className="relative w-5 h-5">
+                    <span className={`absolute w-5 h-0.5 bg-gray-800 transform transition-all duration-300 ease-in-out ${
+                      isMobileMenuOpen ? 'rotate-45 top-2' : 'rotate-0 top-0'
                     }`} />
-                    <span className={`absolute w-6 h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
+                    <span className={`absolute w-5 h-0.5 bg-gray-800 transform transition-all duration-300 ease-in-out ${
                       isMobileMenuOpen ? 'opacity-0' : 'opacity-100 top-2'
                     }`} />
-                    <span className={`absolute w-6 h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
-                      isMobileMenuOpen ? '-rotate-45 top-2 z-50' : 'rotate-0 top-4'
+                    <span className={`absolute w-5 h-0.5 bg-gray-800 transform transition-all duration-300 ease-in-out ${
+                      isMobileMenuOpen ? '-rotate-45 top-2' : 'rotate-0 top-4'
                     }`} />
                   </div>
                 </button>
               </div>
 
-              {/* Logo and Nav Items - Desktop */}
+              {/* Desktop Nav */}
               <div className="hidden lg:flex items-center space-x-16">
                 <h1 className="text-2xl font-serif text-gray-800 tracking-wider">Blissfull</h1>
                 <div className="flex space-x-10">
@@ -78,60 +79,119 @@ const Navbar = () => {
                 </div>
               </div>
 
-              {/* Logo - Mobile */}
+              {/* Mobile Logo */}
               <div className="lg:hidden">
                 <h1 className="text-2xl font-serif text-gray-800 tracking-wider">Blissfull</h1>
               </div>
 
-              {/* Search and Cart */}
+              {/* Search */}
               <div className="flex items-center space-x-6">
-                <div className="relative">
-                  <button 
-                    onClick={() => setIsSearchOpen(!isSearchOpen)}
-                    className="text-gray-700 hover:text-gray-900 transition-colors duration-300"
-                  >
-                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  </button>
-                </div>
+                <button 
+                  onClick={() => setIsSearchOpen(!isSearchOpen)}
+                  className="w-10 h-10 rounded-full bg-gray-50 hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center"
+                >
+                  <svg className="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu - Fullscreen Overlay */}
-      <div className={`fixed inset-0 bg-white transition-opacity duration-500 lg:hidden z-50 ${
-        isMobileMenuOpen
-          ? 'opacity-100 pointer-events-auto'
-          : 'opacity-0 pointer-events-none'
+      {/* Mobile Menu - Modern Overlay */}
+      <div className={`fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity duration-500 lg:hidden z-40 ${
+        isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`}>
-        <div className="flex flex-col items-center justify-center h-full space-y-8 relative">
-          {/* Close Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="absolute top-6 right-6 text-gray-600 hover:text-gray-900 transition-colors duration-300"
-          >
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+        <div className={`fixed inset-y-0 right-0 w-full max-w-sm bg-white transform transition-transform duration-500 ease-in-out ${
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}>
+          {/* Mobile Menu Content */}
+          <div className="flex flex-col h-full">
+            {/* Header */}
+            <div className="flex justify-between items-center p-6 border-b border-gray-100">
+              <h2 className="text-2xl font-serif text-gray-800">Menu</h2>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-10 h-10 rounded-full bg-gray-50 hover:bg-gray-100 transition-all duration-300 flex items-center justify-center group"
+                aria-label="Close menu"
+              >
+                <svg 
+                  className="w-5 h-5 text-gray-800 transition-transform duration-300 group-hover:rotate-90" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={1.5} 
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
 
-          {navItems.map((item, index) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className={`text-2xl font-light text-gray-800 hover:text-gray-600 transition-all duration-300 transform ${
-                isMobileMenuOpen
-                  ? 'translate-x-0 opacity-100'
-                  : 'translate-x-8 opacity-0'
-              }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              {item.name}
-            </a>
-          ))}
+            {/* Menu Items */}
+            <div className="flex-1 overflow-y-auto py-8 px-6">
+              <div className="grid gap-6">
+                {navItems.map((item, idx) => (
+                  <div key={item.name} className="relative">
+                    <button
+                      onClick={() => setActiveIndex(activeIndex === idx ? null : idx)}
+                      className="w-full text-left group"
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="text-xl font-medium text-gray-800 group-hover:text-gray-600 transition-colors duration-300">
+                          {item.name}
+                        </span>
+                        <span className={`transform transition-transform duration-300 ${
+                          activeIndex === idx ? 'rotate-180' : 'rotate-0'
+                        }`}>
+                          <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </span>
+                      </div>
+                      <div className={`overflow-hidden transition-all duration-300 ${
+                        activeIndex === idx ? 'max-h-40 mt-4' : 'max-h-0'
+                      }`}>
+                        <p className="text-gray-600">{item.description}</p>
+                        <a
+                          href={item.href}
+                          className="inline-flex items-center mt-4 text-sm font-medium text-gray-800 hover:text-gray-600 transition-colors duration-300"
+                        >
+                          Explore
+                          <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          </svg>
+                        </a>
+                      </div>
+                    </button>
+                    <div className={`absolute bottom-0 left-0 w-full h-px bg-gray-100 transform transition-transform duration-300 ${
+                      activeIndex === idx ? 'scale-x-100' : 'scale-x-0'
+                    }`} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="p-6 border-t border-gray-100">
+              <div className="grid gap-4">
+                <a href="#" className="text-sm text-gray-600 hover:text-gray-800 transition-colors duration-300">
+                  About Us
+                </a>
+                <a href="#" className="text-sm text-gray-600 hover:text-gray-800 transition-colors duration-300">
+                  Contact
+                </a>
+                <a href="#" className="text-sm text-gray-600 hover:text-gray-800 transition-colors duration-300">
+                  Customer Service
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

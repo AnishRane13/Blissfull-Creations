@@ -50,7 +50,7 @@ const Navbar = () => {
   return (
     <div className="relative">
       <nav
-        className={`w-full transition-all duration-500 z-40 ${
+        className={`w-full transition-all duration-500 z-50 ${
           isSticky
             ? "fixed top-0 bg-white/95 backdrop-blur-md shadow-lg"
             : "relative bg-white"
@@ -85,8 +85,6 @@ const Navbar = () => {
                   </div>
                 </button>
               </div>
-
-          
 
               {/* Desktop Nav */}
               <div className="hidden lg:flex items-center space-x-16">
@@ -138,39 +136,41 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </nav>
 
-
-
+        {/* Search Overlay - Now inside nav */}
         {isSearchOpen && (
-                <div className="bg-white px-4 py-2 shadow-md fixed top-16 left-0 right-0 lg:relative lg:top-0">
-                  <div className="flex items-center border-b border-gray-300">
-                    <input
-                      type="text"
-                      placeholder="Search collections..."
-                      className="w-full px-3 py-2 text-sm outline-none"
+          <div className="absolute top-full left-0 right-0 bg-white shadow-md border-t border-gray-100 z-50">
+            <div className="max-w-7xl mx-auto px-4 py-4">
+              <div className="flex items-center border-b border-gray-300">
+                <input
+                  type="text"
+                  placeholder="Search collections..."
+                  className="w-full px-3 py-2 text-sm outline-none"
+                  autoFocus
+                />
+                <button
+                  onClick={() => setIsSearchOpen(false)}
+                  className="p-2 text-gray-600 hover:text-gray-800"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M6 18L18 6M6 6l12 12"
                     />
-                    <button
-                      onClick={() => setIsSearchOpen(false)}
-                      className="text-gray-600 hover:text-gray-800"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              )}
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </nav>
 
       {/* Mobile Menu - Modern Overlay */}
       <div
@@ -298,7 +298,6 @@ const Navbar = () => {
                 >
                   Contact
                 </a>
-                {/* <p className='text-sm text-gray-600 hover:text-gray-800 transition-colors duration-300'>Since 2018</p> */}
               </div>
             </div>
           </div>

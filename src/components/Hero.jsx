@@ -34,8 +34,8 @@ const Hero = () => {
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] bg-top" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
           <div className="text-center relative">
-            <h1 className="text-4xl sm:text-5xl font-serif tracking-tight text-gray-900 mb-8">
-              Please look at the best of our products
+            <h1 className="text-3xl sm:text-5xl font-serif tracking-tight text-gray-900 mb-8">
+              Have a look at the best of our products
             </h1>
 
             {/* Custom Dropdown with Fixed Positioning */}

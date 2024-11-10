@@ -6,9 +6,9 @@ const InfoBanner = () => {
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] bg-top" />
       
-      <div className="relative max-w-4xl mx-auto px-6 py-12 text-center">
+      <div className="relative max-w-4xl mx-auto px-6 py-12 pb-2 text-center">
         {/* Info Text */}
-        <h2 className="text-3xl sm:text-4xl font-serif tracking-tight text-gray-900 mb-4">
+        <h2 className="text-4xl sm:text-4xl font-serif tracking-tight text-gray-900 mb-4">
           Premium Quality Imitation Jewellery at Best Prices!
         </h2>
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">

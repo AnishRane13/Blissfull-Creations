@@ -1,4 +1,5 @@
 import './App.css'
+import InfoBanner from './components/InforBanner';
 import Navbar from './components/Navbar'
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
     <div className="min-h-screen">
       <Navbar />
       <main>
-        {/* Your content here */}
+        <InfoBanner/>
       </main>
     </div>
   );

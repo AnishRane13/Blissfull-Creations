@@ -1,0 +1,27 @@
+const data = [
+    {
+      "name": "Earring1",
+      "price": "64376",
+      "cutPrice": "73892",
+      "img": "./Earrings.png"
+    },
+    {
+      "name": "Earring2",
+      "price": "55999",
+      "cutPrice": "62000",
+      "img": "./Earrings.png"
+    },
+    {
+      "name": "Earring3",
+      "price": "72000",
+      "cutPrice": "81000",
+      "img": "./Earrings.png"
+    },
+    {
+      "name": "Earring4",
+      "price": "68500",
+      "cutPrice": "75000",
+      "img": "./Earrings.png"
+    }
+  ];
+  

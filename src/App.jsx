@@ -1,24 +1,3 @@
-// import './App.css'
-// import Hero from './components/Hero';
-// import InfoBanner from './components/InforBanner';
-// import Navbar from './components/Navbar'
-
-// function App() {
-//   return (
-//     <div className="min-h-screen font-serif tracking-wider">
-//       <Navbar />
-//       <main>
-//         <InfoBanner/>
-//         <Hero/>
-//       </main>
-//     </div>
-//   );
-// }
-
-// export default App
-
-
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -32,7 +11,7 @@ import Navbar from './components/Navbar'
 function App() {
   return (
     <Router>
-      <div>
+      <div className='font-serif'>
       <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />

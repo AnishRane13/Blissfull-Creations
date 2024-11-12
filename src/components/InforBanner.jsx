@@ -1,6 +1,17 @@
 import React from 'react';
 
 const InfoBanner = () => {
+  const handleScrollToFeatured = () => {
+    const featuredSection = document.getElementById('featuredProduct');
+    if (featuredSection) {
+      const topPosition = featuredSection.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: topPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className="relative overflow-hidden bg-gradient-to-r from-purple-50 to-pink-50">
       {/* Background Grid Pattern */}
@@ -16,12 +27,17 @@ const InfoBanner = () => {
         </p>
         
         {/* Call to Action Button */}
-        <a 
-          href="#shop-now"
+        {/* <button 
+          onClick={handleScrollToFeatured}
           className="inline-block px-8 py-3 bg-white border border-gray-200 text-gray-900 font-medium rounded-lg shadow-sm hover:border-gray-300 hover:bg-purple-50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200"
         >
           Shop Now
-        </a>
+        </button> */}
+
+        {/* <h1 className="text-3xl sm:text-5xl font-serif tracking-tight text-gray-900 mb-8">
+              Have a look at the best of Featured products
+            </h1> */}
+
       </div>
     </div>
   );

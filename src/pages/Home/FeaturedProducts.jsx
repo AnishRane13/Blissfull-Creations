@@ -9,15 +9,19 @@ const FeaturedProducts = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {products.map((product) => (
-        <div key={product.id} className="bg-white rounded-lg shadow-md p-4">
-          <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-t-lg mb-4" />
-          <h3 className="text-lg font-medium text-gray-900">{product.name}</h3>
-          <p className="text-gray-600">{product.description}</p>
-          <a href="/collections" className="text-purple-600 hover:text-purple-700 font-medium mt-4 inline-block">
-            View More
-          </a>
+        <div key={product.id} className="product-card group overflow-hidden rounded-lg shadow-md bg-white transform transition duration-300 hover:shadow-lg">
+          <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-t-lg group-hover:scale-105" />
+          <div className="p-4 flex flex-col justify-between">
+            <div>
+              <h3 className="text-lg font-medium text-gray-900">{product.name}</h3>
+              <p className="text-gray-600 mb-2">{product.description}</p>
+            </div>
+            <a href="/collections" className="text-purple-600 hover:text-purple-700 font-medium self-end">
+              View More
+            </a>
+          </div>
         </div>
       ))}
     </div>

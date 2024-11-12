@@ -9,22 +9,22 @@ const Navbar = () => {
   const navItems = [
     {
       name: "New Arrivals",
-      href: "#",
+      href: "/",
       description: "Discover our latest jewelry pieces",
     },
     {
       name: "Earrings",
-      href: "#",
+      href: "/earrings",
       description: "Elegant earrings for every occasion",
     },
     {
       name: "Necklaces",
-      href: "#",
+      href: "/necklace",
       description: "Timeless necklaces and pendants",
     },
     {
       name: "Collections",
-      href: "#",
+      href: "/collections",
       description: "Explore our curated collections",
     },
   ];
@@ -89,7 +89,7 @@ const Navbar = () => {
               {/* Desktop Nav */}
               <div className="hidden lg:flex items-center space-x-16">
                 <h1 className="text-2xl font-serif text-gray-800 tracking-wider">
-                  Blissfull
+                 <a href="/">Blissfull</a>
                 </h1>
                 <div className="flex space-x-10">
                   {navItems.map((item) => (
@@ -108,7 +108,7 @@ const Navbar = () => {
               {/* Mobile Logo */}
               <div className="lg:hidden">
                 <h1 className="text-2xl font-serif text-gray-800 tracking-wider">
-                  Blissfull
+                <a href="/">Blissfull</a>
                 </h1>
               </div>
 

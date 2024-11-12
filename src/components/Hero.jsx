@@ -35,11 +35,11 @@ const Hero = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
           <div className="text-center relative">
             <h1 className="text-3xl sm:text-5xl font-serif tracking-tight text-gray-900 mb-8">
-              Have a look at the best of our products
+              Have a look at the best of Featured products
             </h1>
 
             {/* Custom Dropdown with Fixed Positioning */}
-            <div className="relative inline-block text-left w-64">
+            {/* <div className="relative inline-block text-left w-64">
               <div className="relative">
                 <button
                   onClick={() => setIsOpen(!isOpen)}
@@ -97,13 +97,13 @@ const Hero = () => {
                   )}
                 </AnimatePresence>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
 
       {/* Carousels Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedValue}
@@ -193,7 +193,7 @@ const Hero = () => {
                   ))}
           </motion.div>
         </AnimatePresence>
-      </div>
+      </div> */}
     </div>
   );
 };

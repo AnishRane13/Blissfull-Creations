@@ -13,14 +13,14 @@ const CategoriesOverview = () => {
         <a
           key={category.name}
           href={category.link}
-          className="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform transition-all duration-300"
+          className="relative group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transform transition-all duration-300 hover:scale-105"
         >
           <img
             src={category.image}
             alt={category.name}
             className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-70" />
           <div className="absolute bottom-4 left-4 right-4 text-white text-center">
             <h3 className="text-xl font-semibold mb-1">{category.name}</h3>
             <p className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">

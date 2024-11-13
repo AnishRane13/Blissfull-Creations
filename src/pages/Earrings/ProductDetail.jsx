@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import earringsData from './earringsData';
 
@@ -7,6 +7,10 @@ const ProductDetail = () => {
   const product = earringsData.find((item) => item.id === parseInt(productId));
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to the top when the component mounts
+  }, []);
 
   // Simulate multiple images (you can add more image URLs to your data)
   const productImages = product?.images || [];

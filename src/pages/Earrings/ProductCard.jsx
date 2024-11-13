@@ -11,13 +11,13 @@ const ProductCard = ({ product }) => {
           alt={product.name}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        
+
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        
+
         {/* Quick View Button - Appears on Hover */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-          <Link to={`/products/${product.id}`}>
+          <Link to={`/earrings/${product.id}`}>
             <button className="bg-white/95 text-gray-900 px-8 py-3 rounded-full font-medium 
               transform -translate-y-8 group-hover:translate-y-0 transition-all duration-500 
               hover:bg-white hover:shadow-lg
@@ -52,7 +52,7 @@ const ProductCard = ({ product }) => {
           <h3 className="text-lg font-semibold text-gray-900 leading-tight group-hover:text-purple-700 transition-colors duration-300">
             {product.name}
           </h3>
-          
+
           {product.material && (
             <p className="text-sm font-medium text-gray-500">
               {product.material}
@@ -77,7 +77,7 @@ const ProductCard = ({ product }) => {
               )}
             </div>
           </div>
-          
+
           {/* <button className="bg-purple-600 text-white px-6 py-2.5 rounded-lg font-medium 
             transition-all duration-300 
             hover:bg-purple-700 hover:shadow-md

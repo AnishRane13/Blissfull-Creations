@@ -32,23 +32,41 @@ const ProductDetail = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div className="relative bg-gray-900 text-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center space-x-4 text-sm">
-            <a href="/" className="hover:text-purple-300 transition-colors">Home</a>
-            <svg className="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-            </svg>
-            <a href="/earrings" className="hover:text-purple-300 transition-colors">{product.type}</a>
-            <svg className="w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-            </svg>
-            <span className="text-purple-300">{product.name}</span>
-          </nav>
-        </div>
-      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <nav className="flex items-center space-x-4 text-sm text-gray-500">
+      <a href="/" className="hover:text-purple-600 transition-colors">
+        Home
+      </a>
+      <svg
+        className="w-4 h-4 text-gray-500"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          fillRule="evenodd"
+          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a 1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+          clipRule="evenodd"
+        />
+      </svg>
+      <a href="/earrings" className="hover:text-purple-600 transition-colors">
+        {product.type}
+      </a>
+      <svg
+        className="w-4 h-4 text-gray-500"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          fillRule="evenodd"
+          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a 1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+          clipRule="evenodd"
+        />
+      </svg>
+      <span className="text-purple-600">{product.name}</span>
+    </nav>
+  </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Column - Images */}
           <div className="space-y-8">

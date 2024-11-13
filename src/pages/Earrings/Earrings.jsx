@@ -2,45 +2,33 @@ import React, { useState } from 'react';
 import Filter from './Filter';
 import ProductCard from './ProductCard';
 import HeaderImage from './HeaderImage';
+import earringsData from './earringsData';
 
 const Earrings = () => {
-  const [filter, setFilter] = useState({
-    type: 'All',
-    color: 'All',
-    priceRange: 'All',
+  const [filters, setFilters] = useState({
+    type: ['All'],
+    color: ['All'],
+    priceRange: ['All']
   });
 
-  const earringsData = [
-    {
-      id: 1,
-      name: 'Gold Stud Earrings',
-      image: '/images/gold-stud.jpg',
-      type: 'Studs',
-      color: 'Gold',
-      price: 45,
-      material: 'Gold Plated',
-      description: 'Elegant gold stud earrings perfect for any occasion.',
-    },
-    {
-      id: 2,
-      name: 'Silver Hoop Earrings',
-      image: '/images/silver-hoop.jpg',
-      type: 'Hoops',
-      color: 'Silver',
-      price: 75,
-      material: 'Sterling Silver',
-      description: 'Classic silver hoop earrings that never go out of style.',
-    },
-    // More products...
-  ];
-
   const filteredEarrings = earringsData.filter((item) => {
-    return (
-      (filter.type === 'All' || item.type === filter.type) &&
-      (filter.color === 'All' || item.color === filter.color) &&
-      (filter.priceRange === 'All' ||
-        (filter.price >= filter.priceRange[0] && item.price <= filter.priceRange[1]))
-    );
+    // Type filter
+    const typeMatch = filters.type.includes('All') || filters.type.includes(item.type);
+    
+    // Color filter
+    const colorMatch = filters.color.includes('All') || filters.color.includes(item.color);
+    
+    // Price filter
+    const priceMatch = filters.priceRange.includes('All') || filters.priceRange.some(range => {
+      if (range === 'All') return true;
+      const [min, max] = JSON.parse(range);
+      if (max === null) {
+        return item.price >= min;
+      }
+      return item.price >= min && item.price <= max;
+    });
+
+    return typeMatch && colorMatch && priceMatch;
   });
 
   return (
@@ -50,9 +38,7 @@ const Earrings = () => {
         subtitle="Discover timeless elegance in every piece"
       />
       
-      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Breadcrumb */}
         <nav className="text-sm mb-8">
           <ol className="list-none p-0 inline-flex text-gray-500">
             <li className="flex items-center">
@@ -65,19 +51,16 @@ const Earrings = () => {
           </ol>
         </nav>
 
-        {/* Filter Section */}
         <div className="mb-12">
-          <Filter filter={filter} setFilter={setFilter} />
+          <Filter filters={filters} setFilters={setFilters} />
         </div>
 
-        {/* Results Count */}
         <div className="mb-8">
           <p className="text-gray-600">
             Showing {filteredEarrings.length} products
           </p>
         </div>
 
-        {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-12">
           {filteredEarrings.map((earring) => (
             <div key={earring.id} className="transform hover:-translate-y-1 transition-transform duration-300">
@@ -86,7 +69,6 @@ const Earrings = () => {
           ))}
         </div>
 
-        {/* Empty State */}
         {filteredEarrings.length === 0 && (
           <div className="text-center py-12">
             <h3 className="text-lg font-medium text-gray-900 mb-2">No products found</h3>

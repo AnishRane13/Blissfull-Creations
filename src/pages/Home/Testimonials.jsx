@@ -30,7 +30,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section className="py-16 pb-0 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-20">
@@ -92,9 +92,9 @@ const Testimonials = () => {
         <div className="text-center mt-16">
           <a
             href="#"
-            className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 transition-colors duration-300"
+            className="inline-block px-6 py-2 bg-purple-600 rounded-full text-sm font-medium text-white hover:bg-purple-700 transition duration-300 transform hover:scale-105"
           >
-            Start Shopping
+            Shop Now
           </a>
         </div>
       </div>

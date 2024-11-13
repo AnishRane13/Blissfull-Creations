@@ -15,7 +15,7 @@ const Home = () => {
       <Hero />
       
       {/* Featured Products Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-6">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* <h2 className="text-3xl font-serif text-gray-900 mb-6 text-center">Featured Products</h2> */}
          <h2 className="text-3xl font-serif text-gray-900 mb-6 text-center">Featured Products</h2>
         <FeaturedProducts id="featuredProduct"/>
@@ -30,9 +30,9 @@ const Home = () => {
       </section>
 
       {/* Customer Testimonials */}
-      <section className="py-12">
+      <section className="py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl font-serif text-gray-900 mb-6 text-center">What Our Customers Say</h2>
+          {/* <h2 className="text-3xl font-serif text-gray-900 mb-6 text-center">What Our Customers Say</h2> */}
           <Testimonials />
         </div>
       </section>

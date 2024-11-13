@@ -5,7 +5,7 @@ import FeaturedProducts from './FeaturedProducts';
 import CategoriesOverview from './CategoriesOverview';
 import Testimonials from './Testimonials';
 // import NewsletterSignUp from '../../components/NewsletterSignUp';
-import Footer from './Footer';
+// import Footer from './Footer';
 
 const Home = () => {
   return (
@@ -45,7 +45,7 @@ const Home = () => {
       </section> */}
 
       {/* Footer */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -7,6 +7,7 @@ import Earrings from './pages/Earrings/Earrings';
 import Necklace from './pages/Necklace/Necklace';
 import Collections from './pages/Collections/Collections';
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/necklace" element={<Necklace />} />
           <Route path="/collections" element={<Collections />} />
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );

@@ -7,11 +7,11 @@ const Navbar = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const navItems = [
-    {
-      name: "New Arrivals",
-      href: "/",
-      description: "Discover our latest jewelry pieces",
-    },
+    // {
+    //   name: "New Arrivals",
+    //   href: "/",
+    //   description: "Discover our latest jewelry pieces",
+    // },
     {
       name: "Earrings",
       href: "/earrings",
@@ -87,9 +87,9 @@ const Navbar = () => {
               </div>
 
               {/* Desktop Nav */}
-              <div className="hidden lg:flex items-center space-x-16">
+              <div className="hidden lg:flex xl:flex 2xl:flex flex-1 items-center space-x-16">
                 <h1 className="text-2xl font-serif text-gray-800 tracking-wider">
-                 <a href="/">Blissfull</a>
+                  <a href="/">Blissfull</a>
                 </h1>
                 <div className="flex space-x-10">
                   {navItems.map((item) => (
@@ -108,7 +108,7 @@ const Navbar = () => {
               {/* Mobile Logo */}
               <div className="lg:hidden">
                 <h1 className="text-2xl font-serif text-gray-800 tracking-wider">
-                <a href="/">Blissfull</a>
+                  <a href="/">Blissfull</a>
                 </h1>
               </div>
 

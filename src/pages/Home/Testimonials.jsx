@@ -7,7 +7,7 @@ const Testimonials = () => {
       name: 'Sarah L.',
       feedback: 'The earrings I bought are absolutely stunning! The craftsmanship and design have exceeded my expectations.',
       rating: 5,
-      image: '/api/placeholder/64/64',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
       title: 'Verified Buyer',
       product: 'Crystal Drop Earrings'
     },
@@ -15,7 +15,7 @@ const Testimonials = () => {
       name: 'John P.',
       feedback: 'Purchased a necklace for my anniversary. My wife loved it, and the quality is top-notch. Highly recommended!',
       rating: 5,
-      image: '/api/placeholder/64/64',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
       title: 'Verified Buyer',
       product: 'Pearl Pendant Necklace'
     },
@@ -23,7 +23,7 @@ const Testimonials = () => {
       name: 'Emma R.',
       feedback: 'Every piece Ive bought from Blissful Creations has been wonderful. They add a touch of elegance to every outfit.',
       rating: 5,
-      image: '/api/placeholder/64/64',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
       title: 'Regular Customer',
       product: 'Various Collections'
     },
@@ -92,7 +92,7 @@ const Testimonials = () => {
         <div className="text-center mt-16">
           <a
             href="#"
-            className="inline-block px-6 py-2 bg-purple-600 rounded-full text-sm font-medium text-white hover:bg-purple-700 transition duration-300 transform hover:scale-105"
+            className="inline-block px-8 py-3 bg-purple-600 rounded-full text-sm font-medium text-white hover:bg-purple-700 transition duration-300 transform hover:scale-105"
           >
             Shop Now
           </a>

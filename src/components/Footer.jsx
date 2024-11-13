@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'; // Importing icons
+import { FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from 'react-icons/fa'; // Importing icons
 
 const Footer = () => {
   return (
@@ -11,11 +11,11 @@ const Footer = () => {
             <a href="#" className="text-gray-400 hover:text-white" aria-label="Facebook">
               <FaFacebookF size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white" aria-label="Instagram">
+            <a href="https://www.instagram.com/the_blissfull_creation/" className="text-gray-400 hover:text-white" aria-label="Instagram">
               <FaInstagram size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white" aria-label="Twitter">
-              <FaTwitter size={20} />
+            <a href="https://api.whatsapp.com/send?phone=919082373639&text=Hello&fbclid=PAZXh0bgNhZW0CMTEAAaac7GQPyhrPmmEcMokCBPDlqyTmpbNf9VoXqOghxc-9ArtiZ2BFFLNGOiw_aem_R9eqVz3D3zE-4aWxfL51sw" className="text-gray-400 hover:text-white" aria-label="Twitter">
+              <FaWhatsapp size={20} />
             </a>
           </div>
         </div>

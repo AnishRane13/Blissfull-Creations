@@ -54,9 +54,9 @@ import React from 'react';
 
 const FeaturedProducts = () => {
   const products = [
-    { id: 1, name: 'Elegant Earrings', description: 'Stunning earrings for every occasion', image: '/images/earrings.jpg' },
-    { id: 2, name: 'Timeless Necklace', description: 'Classic necklaces to elevate any look', image: '/images/necklace.jpg' },
-    { id: 3, name: 'Exclusive Collection', description: 'Explore our latest curated sets', image: '/images/collection.jpg' },
+    { id: 1, name: 'Elegant Earrings', description: 'Stunning earrings for every occasion', image: 'https://plus.unsplash.com/premium_photo-1681276169450-4504a2442173?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+    { id: 2, name: 'Timeless Necklace', description: 'Classic necklaces to elevate any look', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDtEYf_ifCLl_-XXswOHnlVqckZwHW5eXQaA&s' },
+    { id: 3, name: 'Exclusive Collection', description: 'Explore our latest curated sets', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx2JKhcuMJ01LgQrycm9TqaTRD0sSg8dhDaA&s' },
   ];
 
   return (

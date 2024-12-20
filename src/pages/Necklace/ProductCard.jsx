@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
 
         {/* Quick View Button - Appears on Hover */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-          <Link to={`/earrings/${product.id}`}>
+          <Link to={`/necklace/${product.id}`}>
             <button className="bg-white/95 text-gray-900 px-8 py-3 rounded-full font-medium 
               transform -translate-y-8 group-hover:translate-y-0 transition-all duration-500 
               hover:bg-white hover:shadow-lg

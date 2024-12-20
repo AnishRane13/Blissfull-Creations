@@ -79,8 +79,8 @@ const Filter = ({ filters, setFilters }) => {
   const filterOptions = {
     type: [
       { value: 'All', label: 'All Types' },
-      { value: 'Studs', label: 'Studs' },
-      { value: 'Hoops', label: 'Hoops' },
+      { value: 'Gold', label: 'Gold' },
+      { value: 'Silver', label: 'Silver' },
     ],
     color: [
       { value: 'All', label: 'All Colors' },
@@ -91,7 +91,7 @@ const Filter = ({ filters, setFilters }) => {
       { value: 'All', label: 'All Prices' },
       { value: '[0,50]', label: 'Under $50' },
       { value: '[50,100]', label: '$50 - $100' },
-    ]
+    ],
   };
 
   const clearAllFilters = () => {

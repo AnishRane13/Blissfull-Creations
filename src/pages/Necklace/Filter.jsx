@@ -10,8 +10,8 @@ const MultiSelect = ({ name, values, onChange, options, label }) => {
       const newValues = values.includes('All')
         ? [value]
         : values.includes(value)
-          ? values.filter(v => v !== value)
-          : [...values, value];
+        ? values.filter((v) => v !== value)
+        : [...values, value];
 
       onChange(name, newValues.length ? newValues : ['All']);
     }
@@ -34,7 +34,7 @@ const MultiSelect = ({ name, values, onChange, options, label }) => {
         >
           <option value="" disabled>Select {label}</option>
           <option value="All">All {label}s</option>
-          {options.filter(opt => opt.value !== 'All').map((option) => (
+          {options.filter((opt) => opt.value !== 'All').map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
             </option>
@@ -46,15 +46,15 @@ const MultiSelect = ({ name, values, onChange, options, label }) => {
       </div>
 
       <div className="mt-2 flex flex-wrap gap-2">
-        {values.filter(value => value !== 'All').map((value) => (
+        {values.filter((value) => value !== 'All').map((value) => (
           <span
             key={value}
             className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-purple-800"
           >
-            {options.find(opt => opt.value === value)?.label}
+            {options.find((opt) => opt.value === value)?.label}
             <button
               onClick={() => {
-                const newValues = values.filter(v => v !== value);
+                const newValues = values.filter((v) => v !== value);
                 onChange(name, newValues.length ? newValues : ['All']);
               }}
               className="ml-1.5 h-4 w-4 rounded-full inline-flex items-center justify-center hover:bg-purple-200 transition-colors"
@@ -70,40 +70,43 @@ const MultiSelect = ({ name, values, onChange, options, label }) => {
 
 const Filter = ({ filters, setFilters }) => {
   const handleFilterChange = (name, newValues) => {
-    setFilters(prev => ({
+    setFilters((prev) => ({
       ...prev,
-      [name]: newValues
+      [name]: newValues,
     }));
   };
 
   const filterOptions = {
     type: [
       { value: 'All', label: 'All Types' },
-      { value: 'Studs', label: 'Studs' },
-      { value: 'Hoops', label: 'Hoops' },
+      { value: 'Pendant', label: 'Pendant' },
+      { value: 'Choker', label: 'Choker' },
+      { value: 'Pearl', label: 'Pearl' },
     ],
     color: [
       { value: 'All', label: 'All Colors' },
       { value: 'Gold', label: 'Gold' },
       { value: 'Silver', label: 'Silver' },
+      { value: 'White', label: 'White' },
     ],
     priceRange: [
       { value: 'All', label: 'All Prices' },
       { value: '[0,50]', label: 'Under $50' },
       { value: '[50,100]', label: '$50 - $100' },
-    ]
+      { value: '[100,200]', label: '$100 - $200' },
+    ],
   };
 
   const clearAllFilters = () => {
     setFilters({
       type: ['All'],
       color: ['All'],
-      priceRange: ['All']
+      priceRange: ['All'],
     });
   };
 
   const hasActiveFilters = Object.values(filters).some(
-    filterValues => !filterValues.includes('All') || filterValues.length > 1
+    (filterValues) => !filterValues.includes('All') || filterValues.length > 1
   );
 
   return (
@@ -135,7 +138,7 @@ const Filter = ({ filters, setFilters }) => {
             values={filters.type}
             onChange={handleFilterChange}
             options={filterOptions.type}
-            label="Earring Type"
+            label="Necklace Type"
           />
           <MultiSelect
             name="color"
@@ -161,15 +164,16 @@ const Filter = ({ filters, setFilters }) => {
             <span className="text-gray-500">None</span>
           ) : (
             Object.entries(filters).map(([key, values]) =>
-              values[0] !== 'All' && values.map(value => (
+              values[0] !== 'All' &&
+              values.map((value) => (
                 <span
                   key={`${key}-${value}`}
                   className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-purple-800"
                 >
-                  {filterOptions[key].find(opt => opt.value === value)?.label}
+                  {filterOptions[key].find((opt) => opt.value === value)?.label}
                   <button
                     onClick={() => {
-                      const newValues = values.filter(v => v !== value);
+                      const newValues = values.filter((v) => v !== value);
                       handleFilterChange(key, newValues.length ? newValues : ['All']);
                     }}
                     className="ml-1.5 h-4 w-4 rounded-full inline-flex items-center justify-center hover:bg-purple-200 transition-colors"

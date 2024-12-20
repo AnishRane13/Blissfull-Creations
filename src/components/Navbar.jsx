@@ -7,11 +7,6 @@ const Navbar = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const navItems = [
-    // {
-    //   name: "New Arrivals",
-    //   href: "/",
-    //   description: "Discover our latest jewelry pieces",
-    // },
     {
       name: "Earrings",
       href: "/earrings",
@@ -113,7 +108,7 @@ const Navbar = () => {
               </div>
 
               {/* Search */}
-              <div className="flex items-center space-x-6">
+              {/* <div className="flex items-center space-x-6">
                 <button
                   onClick={() => setIsSearchOpen(!isSearchOpen)}
                   className="w-10 h-10 rounded-full transition-colors duration-300 flex items-center justify-center"
@@ -132,13 +127,13 @@ const Navbar = () => {
                     />
                   </svg>
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
 
         {/* Search Overlay */}
-        {isSearchOpen && (
+        {/* {isSearchOpen && (
           <div className="absolute top-full left-0 right-0 bg-white shadow-md border-t border-gray-100 z-50">
             <div className="max-w-7xl mx-auto px-4 py-4">
               <div className="flex items-center border-b border-gray-300">
@@ -169,7 +164,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-        )}
+        )} */}
       </nav>
 
       {/* Mobile Menu - Top Overlay */}

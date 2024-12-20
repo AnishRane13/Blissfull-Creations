@@ -9,6 +9,8 @@ import Collections from './pages/Collections/Collections';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ProductDetail from './pages/Earrings/ProductDetail';
+import ProductDetailNecklace from './pages/Necklace/ProductDetail';
+import ProductDetailCollections from './pages/Collections/ProductDetail';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/necklace" element={<Necklace />} />
           <Route path="/collections" element={<Collections />} />
           <Route path="/earrings/:productId" element={<ProductDetail />} />
+          <Route path="/necklace/:productId" element={<ProductDetailNecklace />} />
+          <Route path="/collections/:productId" element={<ProductDetailCollections />} />
         </Routes>
         <Footer/>
       </div>

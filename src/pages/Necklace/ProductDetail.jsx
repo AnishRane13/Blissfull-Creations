@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import earringsData from './earringsData';
+import necklaceData from './necklaceData';
 
 const ProductDetail = () => {
   const { productId } = useParams();
-  const product = earringsData.find((item) => item.id === parseInt(productId));
+  const product = necklaceData.find((item) => item.id === parseInt(productId));
   // const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
 
